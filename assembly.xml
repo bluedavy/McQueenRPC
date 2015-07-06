@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<assembly>
+  <id>mcqueenrpc</id>
+  <formats>
+    <format>zip</format>
+	<format>tar.gz</format>
+  </formats>
+  <moduleSets>
+    <moduleSet>
+      <binaries>
+        <includeDependencies>true</includeDependencies>
+        <outputDirectory>lib</outputDirectory>
+        <unpack>false</unpack>
+		<outputFileNameMapping>${module.artifactId}-${module.version}.${module.extension}</outputFileNameMapping>
+        <dependencySets>
+          <dependencySet>
+            <useProjectArtifact>true</useProjectArtifact>
+            <outputDirectory>lib</outputDirectory>
+			<scope>runtime</scope>
+          </dependencySet>
+        </dependencySets>
+      </binaries>
+    </moduleSet>
+  </moduleSets>
+  <fileSets>
+    <fileSet>
+	  <directory>mcqueenrpc-script</directory>
+      <includes>
+		<include>client/*.sh</include>
+		<include>server/*.sh</include>
+	  </includes>
+	  <outputDirectory>bin</outputDirectory>
+    </fileSet>
+  </fileSets>
+</assembly>
